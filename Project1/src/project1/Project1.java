@@ -1,21 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package project1;
 
-/**
- *
- * @author kimbe
- */
+import java.util.Scanner;
+
 public class Project1 {
 
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+        System.out.println("Welcome to ASYLUM ESCAPE.");     
+        System.out.println("You were hiking in the woods, and became lost. It was starting to become dark, so you"
+                + " started to look for shelter."); 
+        System.out.println("You decided that you would resume trying to find help after you had gotten a good night's sleep.");
+        System.out.println("You found an abandoned asylum and decided to sleep there. As soon as you got inside, the doors shut behind you.");
+        System.out.println("Your goal is to escape from the asylum.");
+        System.out.println("Press 'x' to learn how to play the game.");
+//Greeted player to game. Told them how to access help menu.
+
+                
+                
+}
     
 }
