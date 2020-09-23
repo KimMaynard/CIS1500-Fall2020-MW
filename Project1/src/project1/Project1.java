@@ -28,6 +28,8 @@ public class Project1 {
     String backwards = "s";
     String right = "d";
     String flashlight = "f";
+    String who = "c";
+    String lock = "p";
     
     while (! input.equalsIgnoreCase(escape)) 
     {
@@ -38,7 +40,7 @@ public class Project1 {
         System.out.println("Actions: F = turn on flashlight, C = ask 'Is anyone there?' P = pick lock, E = eat food, Z = sleep");
         System.out.println("Press 'H' for a hint.");
         System.out.println("Warning: you will get sick after you eat, and will be forced to take a short nap in order to get better.");
-        System.out.println("Press 'Quit' to close the help menu.");
+        
         input = keyboard.nextLine();
     }
     while (input.equalsIgnoreCase("w"))
@@ -65,8 +67,15 @@ public class Project1 {
         System.out.println("You turn on your flashlight.");
         input = keyboard.nextLine();
     }
-
-    
+    while (input.equalsIgnoreCase("c"))
+    {
+        System.out.println("You call out and ask if anyone is there.");
+    }
+    while (input.equalsIgnoreCase("p"))
+    {
+        System.out.println("You try to pick the lock on the door, but it doesn't budge.");
+        input = keyboard.nextLine();
+    }
     
     
     
