@@ -20,9 +20,9 @@ public class Project1 {
 //Greeted player to game. Told them how to access help menu.
     
     Scanner keyboard = new Scanner(System.in);
+    String input = keyboard.nextLine();
     String help = "x"; 
     String escape = "window";
-    String input = keyboard.nextLine();
     String forward = "w";
     String left = "a";
     String backwards = "s";
@@ -30,6 +30,8 @@ public class Project1 {
     String flashlight = "f";
     String who = "c";
     String lock = "p";
+    String hint = "h";
+    String sleep = "z";
     
     while (! input.equalsIgnoreCase(escape)) 
     {
@@ -76,14 +78,21 @@ public class Project1 {
         System.out.println("You try to pick the lock on the door, but it doesn't budge.");
         input = keyboard.nextLine();
     }
-    
-    
-    
+    while (input.equalsIgnoreCase("h"))
+    {
+        System.out.println("Hint: the secret word is something that most buildings have.");
+        input = keyboard.nextLine();
+    }
+    while (input.equalsIgnoreCase("z"))
+    {
+        System.out.println("You lie down to take a short nap.");
+        input = keyboard.nextLine();
+    }
     
     
    }
-
-
+    }
+}
 
                 
                 
