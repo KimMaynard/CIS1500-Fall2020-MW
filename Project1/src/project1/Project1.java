@@ -32,6 +32,7 @@ public class Project1 {
     String lock = "p";
     String hint = "h";
     String sleep = "z";
+    String eat = "e";
     
     while (! input.equalsIgnoreCase(escape)) 
     {
@@ -87,6 +88,17 @@ public class Project1 {
     {
         System.out.println("You lie down to take a short nap.");
         input = keyboard.nextLine();
+    }
+    while (input.equalsIgnoreCase("e"))
+    {
+        System.out.println("You eat some food, and start to feel sick from it.");
+        input = keyboard.nextLine();
+        while (! input.equalsIgnoreCase("z"))
+        {
+            System.out.println("You feel too ill to try and find a way out. You think taking a nap would probably make you feel better.");
+            input = keyboard.nextLine();
+        }
+           
     }
     
     
