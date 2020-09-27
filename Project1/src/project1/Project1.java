@@ -14,7 +14,7 @@ public class Project1 {
         System.out.println("You were hiking in the woods and became lost. It was starting to become dark, so you"
                     + " started to look for shelter."); 
         System.out.println("You decided that you would resume trying to find help" 
-                + "after you had gotten a good night's sleep.");
+                + " after you had gotten a good night's sleep.");
         System.out.println("You found an abandoned asylum and decided to sleep there. As soon as you got inside,"
                 + "the doors shut behind you.");
         System.out.println("Your goal is to escape from the asylum.");
@@ -54,12 +54,12 @@ public class Project1 {
     {
         System.out.println("The game will not end until you type in the secret word.");
         System.out.println("Press 'Q' when you're ready to type in the secret word.");
-        System.out.println("Navigtion: W = go forward, A = go left, S = go backwards, D = go right");
+        System.out.println("Navigation: W = go forward, A = go left, S = go backwards, D = go right");
         System.out.println("Actions: F = turn on flashlight, C = ask 'Is anyone there?'" 
-                + "P = pick lock, E = eat food, Z = sleep");
+                + " P = pick lock, E = eat food, Z = sleep");
         System.out.println("Press 'H' for a hint on the secret word.");
         System.out.println("Warning: you will get sick after you eat, and will be forced to take a" 
-                + "short nap in order to get better.");
+                + " short nap in order to get better.");
         
         input = keyboard.nextLine();
     }
@@ -90,6 +90,7 @@ public class Project1 {
     while (input.equalsIgnoreCase("c"))
     {
         System.out.println("You call out and ask if anyone is there. No one responds.");
+        input = keyboard.nextLine();
     }
     while (input.equalsIgnoreCase("p"))
     {
@@ -98,7 +99,7 @@ public class Project1 {
     }
     while (input.equalsIgnoreCase("h"))
     {
-        System.out.println("Hint: the secret word is something that most buildings have.");
+        System.out.println("Hint: The secret word is something that most buildings have.");
         input = keyboard.nextLine();
     }
     while (input.equalsIgnoreCase("z"))
@@ -113,7 +114,7 @@ public class Project1 {
         while (! input.equalsIgnoreCase("z"))
         {
             System.out.println("You feel too ill to try and find a way out."
-                    + "You think taking a nap would probably make you feel better.");
+                    + " You think taking a nap would probably make you feel better.");
             input = keyboard.nextLine();
         }
     }
