@@ -125,8 +125,6 @@ public class Project1 {
         System.out.println("You climb through one of the windows and escape.");
         System.out.println("Congratulations! You have beat the game.");
     }
-
-
     }}
 
 
