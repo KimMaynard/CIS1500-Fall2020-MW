@@ -17,7 +17,7 @@ public class Project2 {
         Scanner keyboard = new Scanner(System.in);
         String input = keyboard.nextLine();
         
-        //The "y" in front of everything signifies that it is for the create mode.
+        //The "c" in front of everything signifies that it is for the create mode.
         if (input.equalsIgnoreCase("c"))
         {
             System.out.println("Please write an introduction/description for your game.");
@@ -25,8 +25,9 @@ public class Project2 {
             input = keyboard.nextLine();
             writer1.println(input);
             writer1.close();
-            
-            System.out.println("Now specify any commands the player is able to do (such as 'walk forward').");
+            do
+            {    
+            System.out.println("Specify any commands the player is able to do (such as 'walk forward').");
             input = keyboard.nextLine();
             PrintWriter writer2 = new PrintWriter(input + ".txt");
             System.out.println("Does this command wound the player?");
@@ -36,19 +37,24 @@ public class Project2 {
               writer2.println("You've been wounded!");
             }
             else
-            writer2.println("        ");
+            {
+                writer2.println(" ");
+            }
+            System.out.println("Please enter a description of what the command does.");
+            input = keyboard.nextLine();
+            writer2.println(input);
             writer2.close();
             
+            System.out.println("Would you like to create another command?");
+            input = keyboard.nextLine();
+            } while (input.equalsIgnoreCase("yes"));
             
-            
-            
-            
-            
-            
-            
-        
-        
-       
-        }
+            System.out.println("Please enter in the secret escape word for your game.");
+            input = keyboard.nextLine();
+            PrintWriter writer3 = new PrintWriter ("cGameEscapeWord.txt");
+            writer3.println(input);
+            writer3.close();
+            System.out.println("Congratulations! You have finished your game!");
+            }
     
 }}
