@@ -1,0 +1,2 @@
+You've been wounded!
+player pokes objects, but gets finger pricked.

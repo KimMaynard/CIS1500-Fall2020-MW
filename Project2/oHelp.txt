@@ -1,0 +1,3 @@
+Navigation: W = go forward, S = go backwards, A = walk left, D = walk right.
+Commands: F = fight zombie, P = pinch yourself, T = talk to the zombies, C = drive car, Z = sleep. 
+Note: The game will not end until you enter the secret word.

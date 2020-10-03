@@ -1,6 +1,7 @@
 
 package project2;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -9,7 +10,7 @@ public class Project2 {
 
     public static void main(String[] args) throws FileNotFoundException {
         
-        System.out.println("Hello, and welcome to ...");  
+        System.out.println("Hello, and welcome to ZOMBIE SURVIVAL.");  
         System.out.println("You can either choose to play the original game, or create your own!");
         System.out.println("Press 'O' to play the original or 'C' to create your own.");
         
@@ -55,6 +56,44 @@ public class Project2 {
             writer3.println(input);
             writer3.close();
             System.out.println("Congratulations! You have finished your game!");
+            System.out.println("Would you like to play it?");
+            input = keyboard.nextLine();
             }
+        if (input.equalsIgnoreCase("O"))
+        {   
+            //The "o" in front of things specifies that it is for the original game mode.
+            File oIntro = new File("oGameIntroduction.txt");
+            PrintWriter writer4 = new PrintWriter("oGameIntroduction.txt");
+            writer4.println("You woke up one day and saw that everyone--except for you--had turned into a zombie.");
+            writer4.println("Your goal is to survive and find a cure for the zombies.");
+            writer4.println("Press 'X' to learn how to play.");
+            writer4.close();
+            Scanner introReader = new Scanner (oIntro);
+            while (introReader.hasNext())
+            {
+                System.out.println(introReader.nextLine());
+            }
+            
+            input = keyboard.nextLine();
+            while (input.equalsIgnoreCase("X"))
+            {
+                File oHelp = new File("oHelp.txt");
+                PrintWriter helpWriter = new PrintWriter("oHelp.txt");
+                helpWriter.println("Navigation: W = go forward, S = go backwards, A = walk left, D = walk right.");
+                helpWriter.println("Commands: F = fight zombie, P = pinch yourself, T = talk to the zombies," 
+                        + " C = drive car, Z = sleep. ");
+                helpWriter.println("Note: The game will not end until you enter the secret word.");
+                helpWriter.close();
+                
+                Scanner helpReader = new Scanner (oHelp);
+                while (helpReader.hasNext())
+                {
+                    System.out.println(helpReader.nextLine());
+                }
+                input = keyboard.nextLine();
+            }
+            
     
-}}
+        }
+    
+    }}
