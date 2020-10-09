@@ -50,7 +50,6 @@ public class Project2 {
             System.out.println("Would you like to play it? If so, press 'O.'");
             input = keyboard.nextLine();
         }
-
         if (input.equalsIgnoreCase("O")) {
             File Intro = new File("GameIntroduction.txt");
             Scanner introReader = new Scanner(Intro);
@@ -59,24 +58,26 @@ public class Project2 {
             }
             System.out.println("Please enter a command.");
             input = keyboard.nextLine();
-
             File nextCommand = new File(input + ".txt");
             if (nextCommand.exists()) {
                 Scanner nextCommandReader = new Scanner(nextCommand);
                 while (nextCommandReader.hasNext()) {
                     System.out.println(nextCommandReader.nextLine());
                 }
+            } else {
+                while (!nextCommand.exists()) {
+                    System.out.println("That is an invalid command. Please try again.");
+                    input = keyboard.nextLine();
+                    File tryAgain = new File(input + ".txt");
+                    if (tryAgain.exists()) {
+                        Scanner tryAgainReader = new Scanner(tryAgain);
+                        while (tryAgainReader.hasNext()) {
+                            System.out.println(tryAgainReader.nextLine());
+                        }
+                    }
+                }
+            }
 
-            } else { while (! nextCommand.exists()) {
-                System.out.println("That is an invalid command. Please try again.");
-                input = keyboard.nextLine();
-                 File tryAgain = new File(input + ".txt");
-            if (tryAgain.exists()) {
-                Scanner tryAgainReader = new Scanner(tryAgain);
-                while (tryAgainReader.hasNext()) {
-                    System.out.println(tryAgainReader.nextLine());}}
-            }}
-            
-            
+        }
     }
 }
