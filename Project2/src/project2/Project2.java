@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Project2 {
 
     public static void main(String[] args) throws FileNotFoundException {
-
         System.out.println("Hello! With this program, you have the ability to create and play your own game!");
         System.out.println("Press 'C' to create or 'O' to play.");
 
@@ -23,6 +22,8 @@ public class Project2 {
             writer1.close();
             do {
                 System.out.println("Specify any commands the player is able to do (such as 'walk forward').");
+                System.out.println("NOTICE: You must create a command that will heal the player "
+                        + "after they've been wounded.");
                 input = keyboard.nextLine();
                 PrintWriter writer2 = new PrintWriter(input + ".txt");
                 System.out.println("Does this command wound the player?");
@@ -31,6 +32,11 @@ public class Project2 {
                     writer2.println("You've been wounded!");
                 } else {
                     writer2.println(" ");
+                }
+                System.out.println("Does this command heal the player?");
+                input = keyboard.nextLine();
+                if (input.equalsIgnoreCase("yes")) {
+                    writer2.println("You have been healed.");
                 }
                 System.out.println("Please enter a description of what the command does.");
                 input = keyboard.nextLine();
@@ -57,27 +63,43 @@ public class Project2 {
                 System.out.println(introReader.nextLine());
             }
             System.out.println("Please enter a command.");
-            input = keyboard.nextLine();
-            File nextCommand = new File(input + ".txt");
-            if (nextCommand.exists()) {
-                Scanner nextCommandReader = new Scanner(nextCommand);
-                while (nextCommandReader.hasNext()) {
-                    System.out.println(nextCommandReader.nextLine());
-                }
-            } else {
-                while (!nextCommand.exists()) {
-                    System.out.println("That is an invalid command. Please try again.");
-                    input = keyboard.nextLine();
-                    File tryAgain = new File(input + ".txt");
-                    if (tryAgain.exists()) {
-                        Scanner tryAgainReader = new Scanner(tryAgain);
-                        while (tryAgainReader.hasNext()) {
-                            System.out.println(tryAgainReader.nextLine());
-                        }
+            while (!input.equalsIgnoreCase("GameEscapeWord.txt")) {
+                input = keyboard.nextLine();
+                File nextCommand = new File(input + ".txt");
+                if (nextCommand.exists()) {
+                    Scanner nextCommandReader = new Scanner(nextCommand);
+                    while (nextCommandReader.hasNext()) {
+                        System.out.println(nextCommandReader.nextLine());
+                    }
+                } else {
+                    while (!nextCommand.exists()) {
+                        System.out.println("That is an invalid command. Please try again.");
+                        input = keyboard.nextLine();
+                        File tryAgain = new File(input + ".txt");
+                        if (tryAgain.exists()) {
+                            Scanner tryAgainReader = new Scanner(tryAgain);
+                            while (tryAgainReader.hasNext()) {
+                                System.out.println(tryAgainReader.nextLine());
+                            }
+                       break; }
                     }
                 }
-            }
+                System.out.println("Please type in your next command.");
+                input = keyboard.nextLine();
+                File command = new File(input + ".txt");
+                while (command == nextCommand);{
+                cannotRepeat();
+                
+                }
+               
+                
 
-        }
+            }
+        } 
+
     }
+    public static void cannotRepeat() {
+        System.out.println("You cannot repeat the same command twice in a row.");   
+    
+}
 }

@@ -1,2 +1,0 @@
- 
-The player jumps up.
