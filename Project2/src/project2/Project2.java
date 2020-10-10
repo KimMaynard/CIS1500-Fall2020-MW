@@ -71,7 +71,7 @@ public class Project2 {
                     while (nextCommandReader.hasNext()) {
                         System.out.println(nextCommandReader.nextLine());
                     }
-                } else {
+                }
                     while (!nextCommand.exists()) {
                         System.out.println("That is an invalid command. Please try again.");
                         input = keyboard.nextLine();
@@ -83,14 +83,8 @@ public class Project2 {
                             }
                        break; }
                     }
-                }
-                System.out.println("Please type in your next command.");
-                input = keyboard.nextLine();
-                File command = new File(input + ".txt");
-                while (command == nextCommand);{
-                cannotRepeat();
                 
-                }
+                
                
                 
 
@@ -98,8 +92,7 @@ public class Project2 {
         } 
 
     }
-    public static void cannotRepeat() {
-        System.out.println("You cannot repeat the same command twice in a row.");   
+  
     
 }
 }
