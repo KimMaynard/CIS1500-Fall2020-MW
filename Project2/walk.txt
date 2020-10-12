@@ -1,2 +1,2 @@
  
-You take a couple steps.
+the player walks forward

@@ -1,2 +1,2 @@
 You've been wounded!
-you start a fire and burn yourself.
+the player lights a fire and burns themselves
