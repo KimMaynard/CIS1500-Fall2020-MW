@@ -1,13 +1,17 @@
 package project2;
 
+
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Project2 {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+       
         System.out.println("Hello! With this program, you have the ability to create and play your own game!");
         System.out.println("Press 'C' to create or 'O' to play.");
 
@@ -62,37 +66,44 @@ public class Project2 {
             while (introReader.hasNext()) {
                 System.out.println(introReader.nextLine());
             }
-            System.out.println("Please enter a command.");
-            while (!input.equalsIgnoreCase("GameEscapeWord.txt")) {
+        
+            System.out.println("Please enter a command."); 
+            System.out.println("Press 'X' when you want to enter the escape word.");
+          while (! input.equalsIgnoreCase("GameEscapeWord.txt"))  {
                 input = keyboard.nextLine();
                 File nextCommand = new File(input + ".txt");
+                FileWriter trackWriter = new FileWriter("commandTracker.txt", true);
+                PrintWriter trackFile = new PrintWriter (trackWriter);
+                trackFile.println(input);
                 if (nextCommand.exists()) {
                     Scanner nextCommandReader = new Scanner(nextCommand);
                     while (nextCommandReader.hasNext()) {
                         System.out.println(nextCommandReader.nextLine());
                     }
-                }
-                    while (!nextCommand.exists()) {
-                        System.out.println("That is an invalid command. Please try again.");
-                        input = keyboard.nextLine();
-                        File tryAgain = new File(input + ".txt");
-                        if (tryAgain.exists()) {
-                            Scanner tryAgainReader = new Scanner(tryAgain);
-                            while (tryAgainReader.hasNext()) {
-                                System.out.println(tryAgainReader.nextLine());
-                            }
-                       break; }
-                    }
-                
-                
+               trackWriter.close(); }
                
-                
 
-            }
-        } 
+                
+                while (!nextCommand.exists()) {
+                    System.out.println("That is an invalid command. Please try again.");
+                    input = keyboard.nextLine();
+                    File tryAgain = new File(input + ".txt");
+                    if (tryAgain.exists()) { FileWriter nonErrorCommands = new FileWriter ("commandTracker.txt", true);
+                    PrintWriter tracker = new PrintWriter (nonErrorCommands);
+                    tracker.println(input);
+                    tracker.close();
+                        Scanner tryAgainReader = new Scanner(tryAgain);
+                        while (tryAgainReader.hasNext()) {
+                            System.out.println(tryAgainReader.nextLine());
+                        }
+                        break;
+                    }
+                }} 
+
+
+            
+        }
 
     }
-  
-    
-}
+
 }
